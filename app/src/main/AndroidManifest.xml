@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tourguide">
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/travel3"
@@ -10,10 +11,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuide">
         <activity
-            android:name=".Explore"
+            android:name=".Payment"
             android:exported="false" />
         <activity
+            android:name=".BookHotel"
+            android:exported="false" />
+        <activity
+            android:name=".LeisureCenters"
+            android:exported="false" />
+        <activity
+            android:name=".Explore"
+            android:exported="false"
+            android:label="Recreation"/>
+        <activity
             android:name=".PopularHotels"
+            android:label="Hotels"
             android:exported="false" />
         <activity
             android:name=".Login"

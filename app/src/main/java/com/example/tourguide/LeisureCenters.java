@@ -6,7 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.view.Menu;
 
-public class PopularHotels extends AppCompatActivity {
+public class LeisureCenters extends AppCompatActivity {
     Toolbar mtoobar;
 
     @Override
