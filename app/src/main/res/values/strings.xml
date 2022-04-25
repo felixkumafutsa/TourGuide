@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TourGuide</string>
     <string name="see_more">see more</string>
+    <string name="title_activity_services_mapping">ServicesMapping</string>
 </resources>

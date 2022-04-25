@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void toReg(View view) {
-        Intent intent = new Intent(getApplicationContext(),Register.class);
+        Intent intent = new Intent(getApplicationContext(),PopularHotels.class);
         startActivity(intent);
     }
 }

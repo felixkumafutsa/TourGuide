@@ -32,16 +32,16 @@ public class DatabaseAccess {
             this.db.close();
         }
     }
-    public String getUniversities(String shortname){
-        c=db.rawQuery("select name from universities where shortname = '"+shortname+"'",new String[]{});
+    public String getAllServices(String service_type){
+        c=db.rawQuery("select name from services where service_type = '"+service_type+"'",new String[]{});
         StringBuffer stringBuffer = new StringBuffer();
         while(c.moveToNext()){
-            String universityName = c.getString(0);
-            stringBuffer.append(""+universityName);
+            String serviceName = c.getString(0);
+            stringBuffer.append(""+serviceName);
         }
         return stringBuffer.toString();
     }
-    void addUniversity(String title, String author, String pages){
+    void addService(String title, String author, String pages){
         SQLiteDatabase db = openHelper.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -56,40 +56,8 @@ public class DatabaseAccess {
         }
     }
 
-    Cursor readAllUniversities(){
-        String query = "SELECT * FROM universities";
-        SQLiteDatabase db = openHelper.getReadableDatabase();
-
-        Cursor cursor = null;
-        if(db != null){
-            cursor = db.rawQuery(query, null);
-        }
-        return cursor;
-    }
-    Cursor readAllFaq(){
-        String query = "SELECT * FROM faq";
-        SQLiteDatabase db = openHelper.getReadableDatabase();
-
-        Cursor cursor = null;
-        if(db != null){
-            cursor = db.rawQuery(query, null);
-        }
-        return cursor;
-    }
-
-    Cursor readAllFaculties(){
-        String query = "SELECT * FROM faculties";
-        SQLiteDatabase db = openHelper.getReadableDatabase();
-
-        Cursor cursor = null;
-        if(db != null){
-            cursor = db.rawQuery(query, null);
-        }
-        return cursor;
-    }
-
-    Cursor readAllMentors(){
-        String query = "SELECT * FROM mentors";
+    Cursor readAllServices(){
+        String query = "SELECT * FROM services";
         SQLiteDatabase db = openHelper.getReadableDatabase();
 
         Cursor cursor = null;
@@ -125,36 +93,6 @@ public class DatabaseAccess {
         }
     }
 
-    void deleteAllUniversities(){
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        db.execSQL("DELETE FROM universities");
-    }
-
-    void addCourse(String title, String author, String pages){
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-
-        cv.put("name", title);
-        cv.put("shortname", author);
-        cv.put("requirements", pages);
-        long result = db.insert("course",null, cv);
-        if(result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    Cursor readAllCourses(){
-        String query = "SELECT * FROM course";
-        SQLiteDatabase db = openHelper.getReadableDatabase();
-
-        Cursor cursor = null;
-        if(db != null){
-            cursor = db.rawQuery(query, null);
-        }
-        return cursor;
-    }
 
     void updateCOurseData(String row_id, String title, String author, String pages){
         SQLiteDatabase db = openHelper.getWritableDatabase();
@@ -194,27 +132,6 @@ public class DatabaseAccess {
         contentValues.put("email", email);
         contentValues.put("password", password);
         long result = MyDB.insert("admin", null, contentValues);
-        if(result==-1) return false;
-        else
-            return true;
-    }
-    public Boolean insertMentorData(String fname, String lname, String phoneNumber){
-        SQLiteDatabase MyDB = openHelper.getWritableDatabase();
-        ContentValues contentValues= new ContentValues();
-        contentValues.put("firstname", fname);
-        contentValues.put("lastname", lname);
-        contentValues.put("phone", phoneNumber);
-        long result = MyDB.insert("mentors", null, contentValues);
-        if(result==-1) return false;
-        else
-            return true;
-    }
-
-    public Boolean insertFaqData(String content ){
-        SQLiteDatabase MyDB = openHelper.getWritableDatabase();
-        ContentValues contentValues= new ContentValues();
-        contentValues.put("content", content);
-        long result = MyDB.insert("faq", null, contentValues);
         if(result==-1) return false;
         else
             return true;
