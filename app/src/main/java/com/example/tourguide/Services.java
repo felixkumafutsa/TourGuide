@@ -1,35 +1,18 @@
 package com.example.tourguide;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.os.Bundle;
-import android.view.Menu;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class PopularHotels extends AppCompatActivity {
-    Toolbar mtoobar;
+public class Services extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseAccess myDB;
     ArrayList<String> service_id, name, category, service_type, provider_name, phone, email, location;
@@ -38,13 +21,10 @@ public class PopularHotels extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popular_hotels);
+        setContentView(R.layout.activity_services);
 
-        mtoobar = findViewById(R.id.main_toolbar);
-        setSupportActionBar(mtoobar);
-
-        recyclerView = findViewById(R.id.hotelRecycler);
-        myDB = new DatabaseAccess(PopularHotels.this);
+        recyclerView = findViewById(R.id.serviceRecycler);
+        myDB = new DatabaseAccess(Services.this);
         service_id = new ArrayList<>();
         name = new ArrayList<>();
         category = new ArrayList<>();
@@ -56,9 +36,9 @@ public class PopularHotels extends AppCompatActivity {
 
         storeDataInArrays();
 
-        serviceAdapter = new ServiceAdapter(PopularHotels.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
+        serviceAdapter = new ServiceAdapter(Services.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
         recyclerView.setAdapter(serviceAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(PopularHotels.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(Services.this));
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

@@ -101,7 +101,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/category"
+                            android:id="@+id/type"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
@@ -115,7 +115,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/image"></TextView>
 
                         <TextView
-                            android:id="@+id/type"
+                            android:id="@+id/category"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="107dp"
@@ -131,7 +131,7 @@
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <TextView
-                        android:id="@+id/provider"
+                        android:id="@+id/provider_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"

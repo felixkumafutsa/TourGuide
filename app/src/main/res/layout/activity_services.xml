@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:screenReaderFocusable="true"
-    tools:context=".LeisureCenters">
-
+    tools:context=".PopularHotels">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,13 +14,14 @@
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"            >
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/leisureRecycler"
+                android:id="@+id/serviceRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"/>
         </ScrollView>
 
     </androidx.core.widget.NestedScrollView>
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,7 +38,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/mw1"
+                android:src="@drawable/amarylishotel"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="1">
@@ -53,4 +52,5 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

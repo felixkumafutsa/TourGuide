@@ -61,7 +61,7 @@ public class ServicesMapping extends FragmentActivity implements OnMapReadyCallb
         mMap.moveCamera(CameraUpdateFactory.newLatLng(central));
         mMap.addMarker(new MarkerOptions().position(lilongwe).title("Cab Man").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.mw1)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(lilongwe));
-        mMap.addMarker(new MarkerOptions().position(blantyre).title("Kande Beach").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.mw2)));
+        mMap.addMarker(new MarkerOptions().position(blantyre).title("Blantyre Beach").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.mw2)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(blantyre));
     }
     private BitmapDescriptor bitmapDescriptorFromVector(Context context,int vectorResId){

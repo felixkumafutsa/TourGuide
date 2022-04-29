@@ -15,10 +15,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuide">
         <activity
-            android:name=".ServiceProvider"
+            android:name=".AllServices"
+            android:exported="false"
+            android:label="@string/title_activity_all_services"
+            android:theme="@style/Theme.TourGuide.NoActionBar" />
+        <activity
+            android:name=".Profile"
+            android:exported="false"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/Theme.TourGuide.NoActionBar" />
+        <activity
+            android:name=".Services"
             android:exported="false" />
         <activity
-            android:name=".AdminDashboard"
+            android:name=".ServiceProvider"
             android:exported="false" />
         <!--
            The API key for Google Maps-based APIs is defined as a string resource.
@@ -27,7 +37,7 @@
            You need a different API key for each encryption key, including the release key that is used to
            sign the APK for publishing.
            You can define the keys for the debug and release targets in src/debug/ and src/release/.
-      -->
+        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
@@ -41,9 +51,6 @@
             android:exported="false" />
         <activity
             android:name=".BookHotel"
-            android:exported="false" />
-        <activity
-            android:name=".LeisureCenters"
             android:exported="false" />
         <activity
             android:name=".Explore"

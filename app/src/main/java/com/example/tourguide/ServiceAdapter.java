@@ -49,7 +49,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         holder.name_txt.setText(String.valueOf(name.get(position)));
         holder.category_txt.setText(String.valueOf(category.get(position)));
         holder.service_type_txt.setText(String.valueOf(service_type.get(position)));
-        holder.provider_name_txt.setText(String.valueOf(provider_name.get(position)));
+        //holder.provider_name_txt.setText(String.valueOf(provider_name.get(position)));
         holder.phone_txt.setText(String.valueOf(phone.get(position)));
         holder.email_txt.setText(String.valueOf(email.get(position)));
         holder.location_txt.setText(String.valueOf(location.get(position)));
@@ -57,11 +57,11 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, PopularHotels.class);
+                Intent intent = new Intent(context, BookHotel.class);
                 intent.putExtra("id", String.valueOf(service_id.get(position)));
                 intent.putExtra("name", String.valueOf(name.get(position)));
                 intent.putExtra("category", String.valueOf(category.get(position)));
-                intent.putExtra("provider_name", String.valueOf(provider_name.get(position)));
+               // intent.putExtra("provider_name", String.valueOf(provider_name.get(position)));
                 intent.putExtra("phone", String.valueOf(phone.get(position)));
                 intent.putExtra("email", String.valueOf(email.get(position)));
                 intent.putExtra("location", String.valueOf(location.get(position)));
@@ -73,7 +73,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return service_id.size();
     }
     class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -86,7 +86,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
             name_txt = itemView.findViewById(R.id.name);
             category_txt = itemView.findViewById(R.id.category);
             service_type_txt = itemView.findViewById(R.id.type);
-            provider_name_txt = itemView.findViewById(R.id.provider);
+            provider_name_txt = itemView.findViewById(R.id.provider_name);
             phone_txt = itemView.findViewById(R.id.phone);
             email_txt = itemView.findViewById(R.id.email);
             location_txt = itemView.findViewById(R.id.location);

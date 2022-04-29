@@ -4,36 +4,36 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.tourguide.DatabaseOpenHelper;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
 public class DatabaseAccess {
-    private DatabaseOpenHelper openHelper;
+    private static Context context;
+    private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
     private static DatabaseAccess instance;
     Cursor c = null;
-    private Context context;
-    public DatabaseAccess(Context context) {
+
+    DatabaseAccess(Context context){
         this.openHelper = new DatabaseOpenHelper(context);
     }
-
-    public static DatabaseAccess getInstance(Context context){
-        if (instance == null){
+    public static DatabaseAccess getInstance(){
+        if (instance == null) {
             instance = new DatabaseAccess(context);
         }
         return instance;
     }
-    public  void open(){
-        this.db = openHelper.getWritableDatabase();
-
+    public void open(){
+        this.db=openHelper.getWritableDatabase();
     }
     public void close(){
-        if (db != null){
+        if (db != null) {
             this.db.close();
         }
     }
-    public String getAllServices(String service_type){
-        c=db.rawQuery("select name from services where service_type = '"+service_type+"'",new String[]{});
+
+    public String getServices(String name){
+        c=db.rawQuery("select name from services where name = '"+name+"'",new String[]{});
         StringBuffer stringBuffer = new StringBuffer();
         while(c.moveToNext()){
             String serviceName = c.getString(0);
@@ -67,63 +67,6 @@ public class DatabaseAccess {
         return cursor;
     }
 
-    void updateUniversityData(String row_id, String title, String author, String pages){
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("name", title);
-        cv.put("district", author);
-        cv.put("shortname", pages);
-
-        long result = db.update("universities", cv, "_id=?", new String[]{row_id});
-        if(result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
-        }
-
-    }
-
-    void deleteOneUniversity(String row_id){
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        long result = db.delete("universities", "_id=?", new String[]{row_id});
-        if(result == -1){
-            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    void updateCOurseData(String row_id, String title, String author, String pages){
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("name", title);
-        cv.put("shortname", author);
-        cv.put("requirements", pages);
-
-        long result = db.update("course", cv, "_id=?", new String[]{row_id});
-        if(result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
-        }
-
-    }
-
-    void deleteOneCourse(String row_id){
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        long result = db.delete("course", "_id=?", new String[]{row_id});
-        if(result == -1){
-            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    void deleteAllCourses(){
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        db.execSQL("DELETE FROM course");
-    }
 
     public Boolean insertData(String name, String email, String password ){
         SQLiteDatabase MyDB = openHelper.getWritableDatabase();
