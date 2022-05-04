@@ -2,6 +2,7 @@ package com.example.tourguide;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,6 +10,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -22,6 +25,9 @@ public class Services extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services);
+
+        Toolbar mtoobar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(mtoobar);
 
         recyclerView = findViewById(R.id.serviceRecycler);
         myDB = new DatabaseAccess(Services.this);
@@ -39,6 +45,8 @@ public class Services extends AppCompatActivity {
         serviceAdapter = new ServiceAdapter(Services.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
         recyclerView.setAdapter(serviceAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Services.this));
+
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

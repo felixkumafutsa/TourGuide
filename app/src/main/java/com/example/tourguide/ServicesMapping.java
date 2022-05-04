@@ -55,13 +55,13 @@ public class ServicesMapping extends FragmentActivity implements OnMapReadyCallb
         LatLng katoto = new LatLng( -11.4624,34.0124);
         LatLng lilongwe = new LatLng(-13.9833,33.7833);
         LatLng central = new LatLng(-11.4293,33.9963);
-        mMap.addMarker(new MarkerOptions().position(mzuni).title("Hotel Makokola").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.mw1)));
+        mMap.addMarker(new MarkerOptions().position(mzuni).title("Hotel Makokola").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.bed_48px)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(mzuni));
-        mMap.addMarker(new MarkerOptions().position(central).title("Sunbird").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.mw2)));
+        mMap.addMarker(new MarkerOptions().position(central).title("Sunbird").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.hospital_30px)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(central));
-        mMap.addMarker(new MarkerOptions().position(lilongwe).title("Cab Man").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.mw1)));
+        mMap.addMarker(new MarkerOptions().position(lilongwe).title("Cab Man").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.car_top_view_48px)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(lilongwe));
-        mMap.addMarker(new MarkerOptions().position(blantyre).title("Blantyre Beach").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.mw2)));
+        mMap.addMarker(new MarkerOptions().position(blantyre).title("Blantyre Beach").icon(bitmapDescriptorFromVector(getApplicationContext(),R.drawable.find_hospital_30px)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(blantyre));
     }
     private BitmapDescriptor bitmapDescriptorFromVector(Context context,int vectorResId){

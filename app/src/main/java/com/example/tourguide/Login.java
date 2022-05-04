@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if(checkuserpass==true){
                         Toast.makeText(Login.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
-                        Intent intent  = new Intent(getApplicationContext(), PopularHotels.class);
+                        Intent intent  = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent);
                     }else{
                         Toast.makeText(Login.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void toReg(View view) {
-        Intent intent = new Intent(getApplicationContext(),PopularHotels.class);
+        Intent intent = new Intent(getApplicationContext(),Register.class);
         startActivity(intent);
     }
 }

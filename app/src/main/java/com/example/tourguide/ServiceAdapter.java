@@ -40,6 +40,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.service_layout, parent, false);
         return new MyViewHolder(view);
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -57,7 +58,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, BookHotel.class);
+                Intent intent = new Intent(context, Login.class);
                 intent.putExtra("id", String.valueOf(service_id.get(position)));
                 intent.putExtra("name", String.valueOf(name.get(position)));
                 intent.putExtra("category", String.valueOf(category.get(position)));
