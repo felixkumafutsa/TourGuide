@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class DatabaseAccess {
@@ -46,9 +47,11 @@ public class DatabaseAccess {
         ContentValues cv = new ContentValues();
 
         cv.put("name", title);
-        cv.put("district", author);
-        cv.put("shortname", pages);
-        long result = db.insert("universities",null, cv);
+        cv.put("category", author);
+        cv.put("provider_name", pages);
+        cv.put("phone", author);
+        cv.put("location", pages);
+        long result = db.insert("services",null, cv);
         if(result == -1){
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
         }else {
@@ -68,16 +71,26 @@ public class DatabaseAccess {
     }
 
 
-    public Boolean insertData(String name, String email, String password ){
-        SQLiteDatabase MyDB = openHelper.getWritableDatabase();
-        ContentValues contentValues= new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("email", email);
-        contentValues.put("password", password);
-        long result = MyDB.insert("admin", null, contentValues);
-        if(result==-1) return false;
-        else
-            return true;
+    Cursor readAllTransactions(){
+        String query = "SELECT * FROM payments";
+        SQLiteDatabase db = openHelper.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    Cursor readAllServiceProviders(){
+        String query = "SELECT * FROM services";
+        SQLiteDatabase db = openHelper.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
     }
 
     public Boolean checkusername(String name) {
@@ -96,5 +109,65 @@ public class DatabaseAccess {
             return true;
         else
             return false;
+    }
+
+    public Boolean registerAdmin(String user, String pass) {
+           SQLiteDatabase MyDB = openHelper.getWritableDatabase();
+            ContentValues contentValues= new ContentValues();
+            contentValues.put("name", user);
+            contentValues.put("password", pass);
+            long result = MyDB.insert("admin", null, contentValues);
+            if(result==-1) return false;
+            else
+                return true;
+        }
+
+    public Boolean registerUser(EditText username, String email, EditText phone, EditText password) {
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("username", String.valueOf(username));
+        cv.put("email", email);
+        cv.put("phone", String.valueOf(phone));
+        cv.put("password", String.valueOf(password));
+        long result = db.insert("users",null, cv);
+        if(result == -1){
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+    public Boolean bookHotel(String phone, String type, String number_of_occupants, String date) {
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("phone", String.valueOf(phone));
+        cv.put("type", String.valueOf(type));
+        cv.put("number_of_occupants", String.valueOf(number_of_occupants));
+        cv.put("date", String.valueOf(date));
+        long result = db.insert("hotel_service_orders",null, cv);
+        if(result == -1){
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    public Boolean addService(String phone, String type, String number_of_occupants, String date) {
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("phone", String.valueOf(phone));
+        cv.put("type", String.valueOf(type));
+        cv.put("number_of_occupants", String.valueOf(number_of_occupants));
+        cv.put("date", String.valueOf(date));
+        long result = db.insert("hotel_service_orders",null, cv);
+        if(result == -1){
+            return false;
+        }else {
+            return true;
+        }
     }
 }

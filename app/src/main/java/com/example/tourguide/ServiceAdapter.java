@@ -58,7 +58,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, Login.class);
+                Intent intent = new Intent(context, BookHotel.class);
                 intent.putExtra("id", String.valueOf(service_id.get(position)));
                 intent.putExtra("name", String.valueOf(name.get(position)));
                 intent.putExtra("category", String.valueOf(category.get(position)));

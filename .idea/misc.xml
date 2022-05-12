@@ -10,8 +10,10 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/drawable-v24/ic_login_hero.xml" value="0.109" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/ic_menu_camera.xml" value="0.109" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/drawable/side_nav_bar.xml" value="0.109" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_add_admin.xml" value="0.20425724637681159" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_add_service.xml" value="0.20425724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_all_services.xml" value="0.2056159420289855" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_book_hotel.xml" value="0.19293478260869565" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_book_hotel.xml" value="0.15" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_explore.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_leisure_centers.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_login.xml" value="0.25" />
@@ -21,20 +23,25 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_profile.xml" value="0.10055724417426545" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_register.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_service_provider.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_service_provider_profile.xml" value="0.20425724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_services.xml" value="0.2056159420289855" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/activity_services_mapping.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/app_bar_profile.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/app_bar_service_provider_profile.xml" value="0.20425724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/content_profile.xml" value="0.15" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/content_service_provider_profile.xml" value="0.20425724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/fragment_all_services.xml" value="0.19270833333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/fragment_gallery.xml" value="0.10055724417426545" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/fragment_gallery.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/fragment_slideshow.xml" value="0.2056159420289855" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/nav_header_profile.xml" value="0.2056159420289855" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/order_layout.xml" value="0.20425724637681159" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/service_layout.xml" value="0.19429347826086957" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/layout/service_provider_layout.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/menu/activity_main_drawer.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/menu/main_menu.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/menu/profile.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/TourGuide/app/src/main/res/menu/service_provider_profile.xml" value="0.20677083333333332" />
       </map>
     </option>
   </component>

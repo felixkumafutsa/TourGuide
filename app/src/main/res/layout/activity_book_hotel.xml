@@ -54,51 +54,65 @@
             app:layout_constraintTop_toBottomOf="@+id/icon"></TextView>
 
         <EditText
-            android:id="@+id/loginEmail"
+            android:id="@+id/bookerPhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
-            android:hint="Email Address"
-            android:inputType="textEmailAddress"
+            android:hint="Phone"
+            android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginText" />
 
         <EditText
-            android:id="@+id/loginPassword"
+            android:id="@+id/roomType"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
-            android:hint="Phone Number"
-            android:inputType="textPassword"
+            android:hint="Accomodation or Conference"
+            android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/bookerPhone" />
         <EditText
-            android:id="@+id/room"
+            android:id="@+id/numberOfPeople"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:hint="Number of people"
+            android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/roomType" />
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Date to Occupy"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfPeople" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/loginBtn"
+            android:id="@+id/bookHotel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -109,7 +123,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/room" />
+            app:layout_constraintTop_toBottomOf="@+id/date" />
 
         <TextView
             android:id="@+id/gotoRegister"
@@ -124,7 +138,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginBtn"></TextView>
+            app:layout_constraintTop_toBottomOf="@+id/bookHotel"></TextView>
 
       </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

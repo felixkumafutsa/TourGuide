@@ -15,10 +15,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuide">
         <activity
-            android:name=".AllServices"
+            android:name=".ServiceProviderProfile"
             android:exported="false"
-            android:label="@string/title_activity_all_services"
+            android:label="@string/title_activity_service_provider_profile"
             android:theme="@style/Theme.TourGuide.NoActionBar" />
+        <activity
+            android:name=".HotelOrders"
+            android:exported="false" />
+        <activity
+            android:name=".AddService"
+            android:exported="false" />
+        <activity
+            android:name=".AddAdmin"
+            android:exported="false" />
         <activity
             android:name=".Profile"
             android:exported="false"
