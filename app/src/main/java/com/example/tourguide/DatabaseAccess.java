@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tourguide.ui.gallery.GalleryFragment;
+
 public class DatabaseAccess {
     private static Context context;
     private SQLiteOpenHelper openHelper;
@@ -15,7 +17,7 @@ public class DatabaseAccess {
     private static DatabaseAccess instance;
     Cursor c = null;
 
-    DatabaseAccess(Context context){
+    public DatabaseAccess(Context context){
         this.openHelper = new DatabaseOpenHelper(context);
     }
     public static DatabaseAccess getInstance(){
@@ -42,24 +44,8 @@ public class DatabaseAccess {
         }
         return stringBuffer.toString();
     }
-    void addService(String title, String author, String pages){
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        ContentValues cv = new ContentValues();
 
-        cv.put("name", title);
-        cv.put("category", author);
-        cv.put("provider_name", pages);
-        cv.put("phone", author);
-        cv.put("location", pages);
-        long result = db.insert("services",null, cv);
-        if(result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    Cursor readAllServices(){
+    public Cursor readAllServices(){
         String query = "SELECT * FROM services";
         SQLiteDatabase db = openHelper.getReadableDatabase();
 
@@ -70,9 +56,19 @@ public class DatabaseAccess {
         return cursor;
     }
 
-
-    Cursor readAllTransactions(){
+    public Cursor readAllTransactions(){
         String query = "SELECT * FROM payments";
+        SQLiteDatabase db = openHelper.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    Cursor readAllOrders(){
+        String query = "SELECT * FROM hotel_service_orders";
         SQLiteDatabase db = openHelper.getReadableDatabase();
 
         Cursor cursor = null;
@@ -168,6 +164,22 @@ public class DatabaseAccess {
             return false;
         }else {
             return true;
+        }
+    }
+    void addService(String title, String author, String pages){
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("name", title);
+        cv.put("category", author);
+        cv.put("provider_name", pages);
+        cv.put("phone", author);
+        cv.put("location", pages);
+        long result = db.insert("services",null, cv);
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
         }
     }
 }

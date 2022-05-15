@@ -44,7 +44,7 @@ public class BookHotel extends AppCompatActivity {
                                Boolean insert = DB.bookHotel(phon, typ, numberOfOccupants, dt);
                                 if(insert==true){
                                     Toast.makeText(BookHotel.this, "Booking placed successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(),Profile.class);
+                                    Intent intent = new Intent(getApplicationContext(),Payment.class);
                                     startActivity(intent);
                                 }else{
                                     Toast.makeText(BookHotel.this, "Booking failed", Toast.LENGTH_SHORT).show();
