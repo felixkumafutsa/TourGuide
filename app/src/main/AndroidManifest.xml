@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -16,14 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuide">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ServiceProviderProfile"
             android:exported="false"
             android:label="@string/title_activity_service_provider_profile"
             android:theme="@style/Theme.TourGuide.NoActionBar" />
         <activity
             android:name=".HotelOrders"
-            android:label="Hotel Orders"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Hotel Orders" />
         <activity
             android:name=".AddService"
             android:exported="false" />

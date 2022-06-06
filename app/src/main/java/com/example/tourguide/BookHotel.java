@@ -43,6 +43,7 @@ public class BookHotel extends AppCompatActivity {
                         if(!(number_of_occupants.equals(""))){
                                Boolean insert = DB.bookHotel(phon, typ, numberOfOccupants, dt);
                                 if(insert==true){
+                                    //Boolean insert1 = DB.addTransaction(service_provider,date);
                                     Toast.makeText(BookHotel.this, "Booking placed successfully", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(),Payment.class);
                                     startActivity(intent);
@@ -59,5 +60,9 @@ public class BookHotel extends AppCompatActivity {
 
         }
 
+    public void toServices(View view) {
+        Intent intent = new Intent(getApplicationContext(),Services.class);
+        startActivity(intent);
     }
+}
 

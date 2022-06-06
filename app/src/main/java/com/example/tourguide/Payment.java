@@ -10,8 +10,10 @@ import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Payment extends AppCompatActivity {
 ImageButton airtelMoney, mpamba;
@@ -32,7 +34,7 @@ ImageButton airtelMoney, mpamba;
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void dailAirtelMoney(View view) {
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel: *211#"));
+        intent.setData(Uri.parse("tel:*211"+"#"));
             if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
                 return;
             }
@@ -41,12 +43,11 @@ ImageButton airtelMoney, mpamba;
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void dailMpamba(View view) {
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel: *444#"));
-
-            if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
-                return;
-            }
-
+        intent.setData(Uri.parse("tel:*444#"));
+        if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+            return;
+        }
         startActivity(intent);
+
     }
 }

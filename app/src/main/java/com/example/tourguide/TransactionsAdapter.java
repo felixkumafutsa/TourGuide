@@ -77,9 +77,6 @@ public class TransactionsAdapter extends  RecyclerView.Adapter<TransactionsAdapt
             payment_id_txt = itemView.findViewById(R.id.paymentId);
             provider_name_txt = itemView.findViewById(R.id.serviceProvider);
             amount_txt = itemView.findViewById(R.id.amount);
-            date_paid_txt = itemView.findViewById(R.id.datePaid);
-            payer_mail_txt = itemView.findViewById(R.id.payerEmail);
-            payer_phone_txt = itemView.findViewById(R.id.payerPhone);
             transactionsLayout = itemView.findViewById(R.id.transactionsRecycler);
         }
     }

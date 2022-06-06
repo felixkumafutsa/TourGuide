@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.slideshow.SlideshowFragment">
+    tools:context=".ui.providerHome.ProviderHomeFragment">
 
 
     <ScrollView
@@ -99,7 +99,7 @@
                     android:elevation="12dp">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/profileCard"
+                        android:id="@+id/revenueCard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_rowWeight="1"
@@ -117,7 +117,7 @@
                             android:padding="16dp">
 
                             <ImageButton
-                                android:id="@+id/profile"
+                                android:id="@+id/revenue"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
                                 android:layout_gravity="center"
@@ -129,7 +129,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="Profile"
+                                android:text="Revenue"
                                 android:textColor="@color/black"
                                 android:textSize="13dp" />
 

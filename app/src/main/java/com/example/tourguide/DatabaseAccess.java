@@ -45,7 +45,7 @@ public class DatabaseAccess {
         return stringBuffer.toString();
     }
 
-    public Cursor readAllServices(){
+    public Cursor readAllHotelServices(){
         String query = "SELECT * FROM services";
         SQLiteDatabase db = openHelper.getReadableDatabase();
 
@@ -107,6 +107,15 @@ public class DatabaseAccess {
             return false;
     }
 
+    public Boolean checkusername1password1(String user, String pass){
+        SQLiteDatabase MyDB = openHelper.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from users where username = ? and password = ?", new String[] {user,pass});
+        if(cursor.getCount()>0)
+            return true;
+        else
+            return false;
+    }
+
     public Boolean registerAdmin(String user, String pass) {
            SQLiteDatabase MyDB = openHelper.getWritableDatabase();
             ContentValues contentValues= new ContentValues();
@@ -118,7 +127,7 @@ public class DatabaseAccess {
                 return true;
         }
 
-    public Boolean registerUser(EditText username, String email, EditText phone, EditText password) {
+    public Boolean registerUser(EditText username, String email, EditText phone, EditText password, EditText service_provided) {
         SQLiteDatabase db = openHelper.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -150,6 +159,7 @@ public class DatabaseAccess {
             return true;
         }
     }
+
 
     public Boolean addService(String phone, String type, String number_of_occupants, String date) {
         SQLiteDatabase db = openHelper.getWritableDatabase();

@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Register extends AppCompatActivity {
-    EditText username,emailAddress, password, repassword, phone;
+    EditText username,emailAddress, password, repassword, phone, service_provided;
     Button signup, signin;
     DatabaseAccess DB;
     @Override
@@ -23,6 +23,7 @@ public class Register extends AppCompatActivity {
         password = (EditText) findViewById(R.id.registerPassword);
         repassword = (EditText) findViewById(R.id.confirmPassword);
         phone = (EditText) findViewById(R.id.registerPhone);
+        service_provided = (EditText) findViewById(R.id.service_type);
         signup = (Button) findViewById(R.id.registerBtn);
         DB = new DatabaseAccess(this);
 
@@ -33,6 +34,7 @@ public class Register extends AppCompatActivity {
                 String email = emailAddress.getText().toString();
                 String pass = password.getText().toString();
                 String repass = repassword.getText().toString();
+                String service = service_provided.getText().toString();
 
 
                 if(user.equals("")||pass.equals("")||repass.equals(""))
@@ -41,7 +43,7 @@ public class Register extends AppCompatActivity {
                     if(pass.equals(repass)){
                         Boolean checkuser = DB.checkusername(user);
                         if(checkuser==false){
-                            Boolean insert = DB.registerUser(username, email , phone, password);
+                            Boolean insert = DB.registerUser(username, email , phone, password,service_provided);
                             if(insert==true){
                                 Toast.makeText(Register.this, "Registered successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(),Profile.class);
@@ -62,6 +64,11 @@ public class Register extends AppCompatActivity {
     }
 
     public void toHome(View view) {
+        Intent intent = new Intent(getApplicationContext(),Profile.class);
+        startActivity(intent);
+    }
+
+    public void toLogin(View view) {
         Intent intent = new Intent(getApplicationContext(),Profile.class);
         startActivity(intent);
     }

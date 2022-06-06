@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.tourguide.ui.home.HomeFragment"
-        android:label="Dashboard"
+        android:label="Admin Dashboard"
         tools:layout="@layout/fragment_home" />
 
     <fragment

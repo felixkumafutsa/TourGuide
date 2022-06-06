@@ -33,11 +33,19 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 else{
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
+                    Boolean checkreguleruserpass = DB.checkusername1password1(user, pass);
                     if(checkuserpass==true){
                         Toast.makeText(Login.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
                         Intent intent  = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent);
-                    }else{
+                    }
+                    else if(checkreguleruserpass==true){
+                        Toast.makeText(Login.this, "Signed in successfull", Toast.LENGTH_SHORT).show();
+                        Intent intent  = new Intent(getApplicationContext(), ServiceProviderProfile.class);
+                        startActivity(intent);
+                    }
+                    else{
+
                         Toast.makeText(Login.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -49,4 +57,5 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),Register.class);
         startActivity(intent);
     }
+
 }

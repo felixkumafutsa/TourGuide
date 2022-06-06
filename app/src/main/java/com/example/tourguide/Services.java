@@ -1,5 +1,6 @@
 package com.example.tourguide;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,14 +12,17 @@ import android.database.Cursor;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 
 public class Services extends AppCompatActivity {
-    ImageButton imageButton1, imageButton2, imageButton3;
+    ImageButton transportServices, lakeShoreFacilities, events;
     RecyclerView recyclerView;
     DatabaseAccess myDB;
     ArrayList<String> service_id, name, category, service_type, provider_name, phone, email, location;
@@ -31,9 +35,10 @@ public class Services extends AppCompatActivity {
 
         Toolbar mtoobar = findViewById(R.id.main_toolbar);
         setSupportActionBar(mtoobar);
-        imageButton1 = findViewById(R.id.viewMapping);
-        imageButton2 = findViewById(R.id.register);
-        imageButton3 = findViewById(R.id.login);
+        transportServices = findViewById(R.id.transportServices);
+        lakeShoreFacilities = findViewById(R.id.lakeshoreFacilities);
+        events = findViewById(R.id.events);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomBar);
         recyclerView = findViewById(R.id.serviceRecycler);
         myDB = new DatabaseAccess(Services.this);
         service_id = new ArrayList<>();
@@ -50,22 +55,42 @@ public class Services extends AppCompatActivity {
         serviceAdapter = new ServiceAdapter(Services.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
         recyclerView.setAdapter(serviceAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Services.this));
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.map:
+                        Intent intent  = new Intent(getApplicationContext(), ServicesMapping.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.login:
+                        Intent intent1  = new Intent(getApplicationContext(), Login.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.createAccount:
+                        Intent intent2  = new Intent(getApplicationContext(), Register.class);
+                        startActivity(intent2);
+                        break;
+                }
+                return false;
+            }
+        });
 
-        imageButton1.setOnClickListener(new View.OnClickListener() {
+        transportServices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),ServicesMapping.class);
                 startActivity(intent);
             }
         });
-        imageButton2.setOnClickListener(new View.OnClickListener() {
+        lakeShoreFacilities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Register.class);
                 startActivity(intent);
             }
         });
-        imageButton3.setOnClickListener(new View.OnClickListener() {
+        events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Login.class);
@@ -82,7 +107,7 @@ public class Services extends AppCompatActivity {
         }
     }
     private void storeDataInArrays() {
-        Cursor cursor = myDB.readAllServices();
+        Cursor cursor = myDB.readAllHotelServices();
         if(cursor.getCount() == 0){
 
         }else{

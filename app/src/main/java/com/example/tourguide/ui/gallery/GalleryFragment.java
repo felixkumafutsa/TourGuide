@@ -78,42 +78,8 @@ public class GalleryFragment extends Fragment {
         ImageButton services = (ImageButton) view.findViewById(R.id.viewHotels);
         ImageButton maps = (ImageButton) view.findViewById(R.id.viewMap);
         ImageButton addAdmin= (ImageButton) view.findViewById(R.id.addAdmin);
-        services.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), Services.class));
-            }
-        });
-        maps.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), ServicesMapping.class));
-            }
-        });
-        addAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), AddAdmin.class));
-            }
-        });
-        serviceProviders.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), ServiceProvider.class));
-            }
-        });
-        addService.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), AddService.class));
-            }
-        });
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), Services.class));
-            }
-        });
+
+
 
 
     }

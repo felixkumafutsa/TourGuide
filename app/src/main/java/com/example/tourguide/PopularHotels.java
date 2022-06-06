@@ -68,7 +68,7 @@ public class PopularHotels extends AppCompatActivity {
         }
     }
     private void storeDataInArrays() {
-        Cursor cursor = myDB.readAllServices();
+        Cursor cursor = myDB.readAllHotelServices();
         if(cursor.getCount() == 0){
 
         }else{

@@ -57,13 +57,15 @@
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/airtelMoney"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="16dp"
+                    android:scaleType="fitXY"
+                    android:clickable="true"
                     android:onClick="dailAirtelMoney"
-                    android:src="@drawable/airtelmoney"
+                    android:src="@drawable/index"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.492"
                     app:layout_constraintStart_toStartOf="parent"
@@ -71,11 +73,13 @@
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/mpamba"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="16dp"
+                    android:scaleType="fitXY"
+                    android:clickable="true"
                     android:onClick="dailMpamba"
                     android:src="@drawable/mpamba"
                     app:layout_constraintEnd_toEndOf="parent"

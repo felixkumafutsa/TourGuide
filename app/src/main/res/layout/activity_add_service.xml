@@ -18,6 +18,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="5dp">
@@ -27,112 +28,148 @@
                 android:layout_height="match_parent"
                 android:paddingBottom="50dp">
 
+
                 <ImageView
                     android:id="@+id/icon"
-                    android:layout_width="80dp"
+                    android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:layout_marginVertical="40dp"
-                    android:layout_gravity="center"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/travel3"
+                    android:scaleType="centerCrop"
+                    android:layout_marginVertical="5dp"
+                    android:src="@drawable/mw1"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/registerText"
+                    android:id="@+id/loginText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Add Service"
+                    android:layout_marginTop="8dp"
+                    android:text="Enter Booking Details"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/icon"></TextView>
 
                 <EditText
-                    android:id="@+id/servicetype"
+                    android:id="@+id/bookerPhone"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="18dp"
                     android:layout_marginEnd="16dp"
                     android:ems="10"
-                    android:hint="Service Type"
+                    android:hint="Phone"
+                    android:inputType="phone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/loginText" />
+
+                <EditText
+                    android:id="@+id/roomType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="Accomodation or Conference"
                     android:inputType="text"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/registerText" />
+                    app:layout_constraintTop_toBottomOf="@+id/bookerPhone" />
+                <EditText
+                    android:id="@+id/numberOfPeople"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="Number of people"
+                    android:inputType="text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roomType" />
+                <EditText
+                    android:id="@+id/date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="Date to Occupy"
+                    android:inputType="date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/numberOfPeople" />
 
-                <EditText
-                    android:id="@+id/serviceName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:ems="10"
-                    android:hint="Service Name"
-                    android:inputType="textPassword"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/servicetype" />
-                <EditText
-                    android:id="@+id/serviceCategory"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:ems="10"
-                    android:hint="Category"
-                    android:inputType="textPassword"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/serviceName" />
-                <EditText
-                    android:id="@+id/providerName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:ems="10"
-                    android:hint="Category"
-                    android:inputType="textPassword"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/serviceCategory" />
+                    app:layout_constraintTop_toBottomOf="@+id/date"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:src="@mipmap/ic_launcher">
+                    </androidx.appcompat.widget.AppCompatImageView>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/serviceProvider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="20dp"
+                        android:text="Select Image"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/image"></androidx.appcompat.widget.AppCompatButton>
 
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/registerBtn"
-                    android:background="@drawable/button_background_blue"
+                    android:id="@+id/bookHotel"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="16dp"
-                    android:text="Add Service"
+                    android:background="@drawable/button_background_blue"
+                    android:text="book Service"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/providerName" />
+                    app:layout_constraintTop_toBottomOf="@+id/line" />
+
                 <TextView
                     android:id="@+id/gotoRegister"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="15dp"
-                    android:onClick="toHome"
-                    android:gravity="center"
+                    android:layout_marginTop="18dp"
                     android:layout_marginEnd="16dp"
-                    android:text="back to home."
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:gravity="center"
+                    android:onClick="toHome"
+                    android:text="Back to explore more Services"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/registerBtn" ></TextView>
+                    app:layout_constraintTop_toBottomOf="@+id/bookHotel"></TextView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
