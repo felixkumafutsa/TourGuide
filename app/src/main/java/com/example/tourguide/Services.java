@@ -38,7 +38,6 @@ public class Services extends AppCompatActivity {
         transportServices = findViewById(R.id.transportServices);
         lakeShoreFacilities = findViewById(R.id.lakeshoreFacilities);
         events = findViewById(R.id.events);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomBar);
         recyclerView = findViewById(R.id.serviceRecycler);
         myDB = new DatabaseAccess(Services.this);
         service_id = new ArrayList<>();
@@ -55,26 +54,6 @@ public class Services extends AppCompatActivity {
         serviceAdapter = new ServiceAdapter(Services.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
         recyclerView.setAdapter(serviceAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Services.this));
-        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.map:
-                        Intent intent  = new Intent(getApplicationContext(), ServicesMapping.class);
-                        startActivity(intent);
-                        break;
-                    case R.id.login:
-                        Intent intent1  = new Intent(getApplicationContext(), Login.class);
-                        startActivity(intent1);
-                        break;
-                    case R.id.createAccount:
-                        Intent intent2  = new Intent(getApplicationContext(), Register.class);
-                        startActivity(intent2);
-                        break;
-                }
-                return false;
-            }
-        });
 
         transportServices.setOnClickListener(new View.OnClickListener() {
             @Override
