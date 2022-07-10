@@ -1,4 +1,4 @@
-package com.example.tourguide.ui.providerHome;
+package com.example.tourguide.provider_ui.providerHome;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -6,14 +6,14 @@ import androidx.lifecycle.ViewModel;
 
 public class ProviderHomeViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<String> myText;
 
     public ProviderHomeViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("Profile Settings");
+        myText = new MutableLiveData<>();
+        myText.setValue("Profile Settings");
     }
 
     public LiveData<String> getText() {
-        return mText;
+        return myText;
     }
 }

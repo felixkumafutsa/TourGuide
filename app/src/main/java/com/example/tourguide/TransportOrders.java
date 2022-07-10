@@ -21,7 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class HotelOrders extends AppCompatActivity {
+public class TransportOrders extends AppCompatActivity {
     ImageButton transportServices, lakeShoreFacilities, events;
     RecyclerView recyclerView;
     DatabaseAccess myDB;
@@ -39,7 +39,7 @@ public class HotelOrders extends AppCompatActivity {
         lakeShoreFacilities = findViewById(R.id.lakeshoreFacilities);
         events = findViewById(R.id.events);
         recyclerView = findViewById(R.id.hotel_order_recycler);
-        myDB = new DatabaseAccess(HotelOrders.this);
+        myDB = new DatabaseAccess(TransportOrders.this);
         order_id = new ArrayList<>();
         phone = new ArrayList<>();
         type = new ArrayList<>();
@@ -48,9 +48,9 @@ public class HotelOrders extends AppCompatActivity {
 
         storeDataInArrays();
 
-        hotelOrdersAdapter = new HotelOrdersAdapter(HotelOrders.this,this, order_id,phone, type, number_of_occupants, date);
+        hotelOrdersAdapter = new HotelOrdersAdapter(TransportOrders.this,this, order_id,phone, type, number_of_occupants, date);
         recyclerView.setAdapter(hotelOrdersAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(HotelOrders.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(TransportOrders.this));
 
         transportServices.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +83,7 @@ public class HotelOrders extends AppCompatActivity {
         }
     }
     private void storeDataInArrays() {
-        Cursor cursor = myDB.readAllHotelOrders();
+        Cursor cursor = myDB.readAllTransportOrders();
         if(cursor.getCount() == 0){
 
         }else{

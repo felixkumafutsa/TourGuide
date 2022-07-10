@@ -1,4 +1,4 @@
-package com.example.tourguide.ui.providerSlideshow;
+package com.example.tourguide.provider_ui.providerSlideshow;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

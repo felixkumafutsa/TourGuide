@@ -36,7 +36,7 @@ public class Services extends AppCompatActivity {
         Toolbar mtoobar = findViewById(R.id.main_toolbar);
         setSupportActionBar(mtoobar);
         transportServices = findViewById(R.id.transportServices);
-        lakeShoreFacilities = findViewById(R.id.lakeshoreFacilities);
+        lakeShoreFacilities = findViewById(R.id.serviceReg);
         events = findViewById(R.id.events);
         recyclerView = findViewById(R.id.serviceRecycler);
         myDB = new DatabaseAccess(Services.this);
@@ -58,14 +58,14 @@ public class Services extends AppCompatActivity {
         transportServices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ServicesMapping.class);
+                Intent intent = new Intent(getApplicationContext(),Maps.class);
                 startActivity(intent);
             }
         });
         lakeShoreFacilities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Register.class);
+                Intent intent = new Intent(getApplicationContext(),ServicesMapping.class);
                 startActivity(intent);
             }
         });

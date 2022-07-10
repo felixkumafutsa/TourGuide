@@ -118,62 +118,6 @@
                                     android:gravity="center"
                                     android:orientation="vertical">
                                     <androidx.appcompat.widget.AppCompatImageButton
-                                        android:id="@+id/hospa"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:src="@drawable/hospital_3_80px"
-                                        android:text="logout" />
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_margin="5dp"
-                                        android:text="Hospitals"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"></TextView>
-
-                                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp">
-                                <androidx.appcompat.widget.LinearLayoutCompat
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-                                    <androidx.appcompat.widget.AppCompatImageButton
-                                        android:id="@+id/transport"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:src="@drawable/taxi"
-                                        android:text="Home"/>
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_margin="5dp"
-                                        android:text="Taxis/Cabs"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintHorizontal_bias="0.498"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toBottomOf="@+id/icon"></TextView>
-
-                                </androidx.appcompat.widget.LinearLayoutCompat>
-                            </androidx.cardview.widget.CardView>
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp">
-                                <androidx.appcompat.widget.LinearLayoutCompat
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
-                                    <androidx.appcompat.widget.AppCompatImageButton
                                         android:id="@+id/publicTransport"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -205,7 +149,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="Special Events"
+                    android:text="Other Services"
                     android:textSize="16sp"
                     android:textStyle="bold"></TextView>
                 <LinearLayout
@@ -223,6 +167,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:layout_marginBottom="35dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/text_home"
                         app:layout_constraintVertical_bias="0.0"
@@ -232,7 +177,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="30px">
                             <androidx.cardview.widget.CardView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -243,23 +189,22 @@
                                     android:gravity="center"
                                     android:orientation="vertical">
                                     <androidx.appcompat.widget.AppCompatImageButton
-                                        android:id="@+id/theater_event"
+                                        android:id="@+id/routes"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:src="@drawable/theater"
+                                        android:src="@drawable/location_64px"
                                         android:text="logout" />
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
-                                        android:text="Movie Premier"
+                                        android:text="Driving routes"
                                         android:textSize="16sp"
                                         android:textStyle="bold"></TextView>
 
                                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                             </androidx.cardview.widget.CardView>
-
                             <androidx.cardview.widget.CardView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -270,7 +215,7 @@
                                     android:gravity="center"
                                     android:orientation="vertical">
                                     <androidx.appcompat.widget.AppCompatImageButton
-                                        android:id="@+id/transport_offer"
+                                        android:id="@+id/hospa"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:src="@drawable/taxi_80px"
@@ -279,7 +224,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
-                                        android:text="Transport"
+                                        android:text="Private Transport"
                                         android:textSize="16sp"
                                         android:textStyle="bold"
                                         app:layout_constraintEnd_toEndOf="parent"
@@ -299,16 +244,16 @@
                                     android:gravity="center"
                                     android:orientation="vertical">
                                     <androidx.appcompat.widget.AppCompatImageButton
-                                        android:id="@+id/publicTransport_offer"
+                                        android:id="@+id/privateTpt"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:src="@drawable/bus_100px"
+                                        android:src="@drawable/hospital_3_80px"
                                         android:text="Home"/>
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
-                                        android:text="Buses"
+                                        android:text="Medical facilities"
                                         android:textSize="16sp"
                                         android:textStyle="bold"
                                         app:layout_constraintEnd_toEndOf="parent"

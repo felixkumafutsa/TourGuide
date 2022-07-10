@@ -1,4 +1,4 @@
-package com.example.tourguide.ui.providerSlideshow;
+package com.example.tourguide.provider_ui.providerSlideshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

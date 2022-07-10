@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
-    ImageButton accomodation,lakeshore,hospitals,buses, taxi;
+    ImageButton accomodation,lakeshore,hospitals,buses, taxi, routes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,8 @@ public class HomeActivity extends AppCompatActivity {
         lakeshore = findViewById(R.id.lakeshore);
        hospitals = findViewById(R.id.hospa);
         buses = findViewById(R.id.publicTransport);
-        taxi = findViewById(R.id.transport);
+        taxi = findViewById(R.id.privateTpt);
+        routes = findViewById(R.id.routes);
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -50,10 +51,11 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             }
         });
-        accomodation.setOnClickListener(new View.OnClickListener() {
+        routes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(),Maps.class);
+                startActivity(intent);
             }
         });
         accomodation.setOnClickListener(new View.OnClickListener() {
@@ -66,21 +68,21 @@ public class HomeActivity extends AppCompatActivity {
         hospitals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Register.class);
+                Intent intent = new Intent(getApplicationContext(),Services.class);
                 startActivity(intent);
             }
         });
         buses.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Register.class);
+                Intent intent = new Intent(getApplicationContext(),Services.class);
                 startActivity(intent);
             }
         });
         taxi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Register.class);
+                Intent intent = new Intent(getApplicationContext(),HotelOrders.class);
                 startActivity(intent);
             }
         });

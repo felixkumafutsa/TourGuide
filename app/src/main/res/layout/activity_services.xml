@@ -33,7 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="More Services"
+                    android:text="More Services and Utilities"
                     android:textSize="16sp"
                     android:textStyle="bold"></TextView>
                 <HorizontalScrollView
@@ -64,13 +64,13 @@
                                 android:id="@+id/transportServices"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/market_square_48px"
+                                android:src="@drawable/location_64px"
                                 android:text="Home"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
-                                android:text=" Transport Services"
+                                android:text=" Driving and routes"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +91,7 @@
                             android:gravity="center"
                             android:orientation="vertical">
                             <androidx.appcompat.widget.AppCompatImageButton
-                                android:id="@+id/lakeshoreFacilities"
+                                android:id="@+id/serviceReg"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/add_48px"
@@ -100,7 +100,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
-                                android:text="LakeShore facilities"
+                                android:text="Register Service"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +131,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
-                                android:text="Login"
+                                android:text="Login or Register"
                                 android:textSize="16sp"
                                 android:textStyle="bold"></TextView>
 

@@ -34,7 +34,7 @@ ImageButton airtelMoney, mpamba;
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void dailAirtelMoney(View view) {
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:*211"+"#"));
+        intent.setData(Uri.parse("tel:" + Uri.encode("*211#")));
             if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
                 return;
             }
@@ -43,7 +43,7 @@ ImageButton airtelMoney, mpamba;
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void dailMpamba(View view) {
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:*444#"));
+        intent.setData(Uri.parse("tel:" + Uri.encode("*444#")));
         if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
             return;
         }

@@ -7,37 +7,47 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class AddService extends AppCompatActivity {
-    EditText phone, type, number_of_occupants, date;
-    Button signup, signin;
+    EditText serviceName, category, type, providerName, providerPhone,  providerEmail, location;
+    Button add, selectImage;
+    ImageView serviceImage;
     DatabaseAccess DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_service);
-        phone = (EditText) findViewById(R.id.bookerPhone);
-        type = (EditText) findViewById(R.id.roomType);
-        number_of_occupants = (EditText) findViewById(R.id.numberOfPeople);
-        date = (EditText) findViewById(R.id.date);
-        signup = (Button) findViewById(R.id.bookHotel);
+        serviceName = (EditText) findViewById(R.id.serviceName);
+        category = (EditText) findViewById(R.id.serviceCategory);
+        type = (EditText) findViewById(R.id.serviceType);
+        providerName = (EditText) findViewById(R.id.providerName);
+        providerPhone = (EditText) findViewById(R.id.providerPhone);
+        providerEmail = (EditText) findViewById(R.id.providerEmail);
+        location = (EditText) findViewById(R.id.serviceLocation);
+        selectImage = (Button) findViewById(R.id.serviceImageButton);
+        add = (Button) findViewById(R.id.addService);
         DB = new DatabaseAccess(this);
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String phon = phone.getText().toString();
-                String typ = type.getText().toString();
-                String numberOfOccupants = number_of_occupants.getText().toString();
-                String dt = date.getText().toString();
+                String service = serviceName.getText().toString();
+                String cate = category.getText().toString();
+                String ty = type.getText().toString();
+                String provName = providerName.getText().toString();
+                String provPhone = providerPhone.getText().toString();
+                String provEmail = providerEmail.getText().toString();
+                String locat = location.getText().toString();
 
 
-                if(phone.equals("")||type.equals("")||date.equals(""))
+                if(service.equals("")||ty.equals("")||cate.equals(""))
                     Toast.makeText(AddService.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 else{
-                    if(!(number_of_occupants.equals(""))){
-                        Boolean insert = DB.bookHotel(phon, typ, numberOfOccupants, dt);
+                    if(!(provEmail.equals(""))){
+                        Boolean insert = DB.addService(service, cate, ty, provName, provPhone,  provEmail, locat);
                         if(insert==true){
                             Toast.makeText(AddService.this, "Service added successfully", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(),Payment.class);

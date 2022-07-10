@@ -47,7 +47,7 @@ public class TransactionsAdapter extends  RecyclerView.Adapter<TransactionsAdapt
         holder.provider_name_txt.setText(String.valueOf(service_provider.get(position)));
         holder.amount_txt.setText(String.valueOf(amount.get(position)));
         holder.date_paid_txt.setText(String.valueOf(date_paid.get(position)));
-        holder.payer_mail_txt.setText(String.valueOf(payer_email.get(position)));
+        holder.payer_email_txt.setText(String.valueOf(payer_email.get(position)));
         holder.payer_phone_txt.setText(String.valueOf(payer_phone.get(position)));
         holder.transactionsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,13 +70,16 @@ public class TransactionsAdapter extends  RecyclerView.Adapter<TransactionsAdapt
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView payment_id_txt, provider_name_txt, amount_txt, date_paid_txt, payer_mail_txt, payer_phone_txt;
+        TextView payment_id_txt, provider_name_txt, amount_txt, date_paid_txt, payer_email_txt, payer_phone_txt;
         LinearLayout transactionsLayout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             payment_id_txt = itemView.findViewById(R.id.paymentId);
             provider_name_txt = itemView.findViewById(R.id.serviceProvider);
             amount_txt = itemView.findViewById(R.id.amount);
+            date_paid_txt = itemView.findViewById(R.id.paymenDate);
+            payer_email_txt = itemView.findViewById(R.id.payerEmail);
+            payer_phone_txt = itemView.findViewById(R.id.payerPhone);
             transactionsLayout = itemView.findViewById(R.id.transactionsRecycler);
         }
     }

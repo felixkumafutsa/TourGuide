@@ -31,11 +31,11 @@
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:scaleType="centerCrop"
             android:layout_marginVertical="5dp"
-            android:src="@drawable/mw1"
+            android:src="@drawable/around_the_globe_96px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"

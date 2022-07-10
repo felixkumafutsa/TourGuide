@@ -34,12 +34,12 @@ public class Login extends AppCompatActivity {
                 else{
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     Boolean checkreguleruserpass = DB.checkusername1password1(user, pass);
-                    if(checkuserpass==true){
+                    if(checkuserpass){
                         Toast.makeText(Login.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
                         Intent intent  = new Intent(getApplicationContext(), Profile.class);
                         startActivity(intent);
                     }
-                    else if(checkreguleruserpass==true){
+                    else if(checkreguleruserpass){
                         Toast.makeText(Login.this, "Signed in successfull", Toast.LENGTH_SHORT).show();
                         Intent intent  = new Intent(getApplicationContext(), ServiceProviderProfile.class);
                         startActivity(intent);
