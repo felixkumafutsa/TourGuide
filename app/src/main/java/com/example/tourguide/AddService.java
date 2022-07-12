@@ -50,7 +50,7 @@ public class AddService extends AppCompatActivity {
                         Boolean insert = DB.addService(service, cate, ty, provName, provPhone,  provEmail, locat);
                         if(insert==true){
                             Toast.makeText(AddService.this, "Service added successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(),Payment.class);
+                            Intent intent = new Intent(getApplicationContext(),Services.class);
                             startActivity(intent);
                         }else{
                             Toast.makeText(AddService.this, "Service not added", Toast.LENGTH_SHORT).show();

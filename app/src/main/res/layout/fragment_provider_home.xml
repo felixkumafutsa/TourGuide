@@ -123,7 +123,7 @@
                                 android:layout_gravity="center"
                                 android:background="@drawable/button"
                                 android:clickable="true"
-                                android:src="@drawable/account_64px" />
+                                android:src="@drawable/money_bag_40px" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -201,13 +201,13 @@
                                 android:layout_gravity="center"
                                 android:background="@drawable/button"
                                 android:clickable="true"
-                                android:src="@drawable/market_square_48px" />
+                                android:src="@drawable/refund_48px" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="Services"
+                                android:text="Refunds"
                                 android:textColor="@color/black"
                                 android:textSize="13dp" />
 
@@ -240,7 +240,7 @@
                                 android:layout_gravity="center"
                                 android:background="@drawable/button"
                                 android:clickable="true"
-                                android:src="@drawable/money_96px" />
+                                android:src="@drawable/account_64px" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -254,83 +254,7 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/servicesCard"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        android:background="#91AAB3"
-                        app:cardCornerRadius="12dp"
-                        app:elevation="60dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageButton
-                                android:id="@+id/mservices"
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/button"
-                                android:clickable="true"
-                                android:src="@drawable/food_80px" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Policy"
-                                android:textColor="@color/black"
-                                android:textSize="13dp" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/transactionsCard"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        android:background="#91AAB3"
-                        app:cardCornerRadius="12dp"
-                        app:elevation="60dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageButton
-                                android:id="@+id/msgSend"
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/button"
-                                android:clickable="true"
-                                android:src="@drawable/money_96px" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Transactions"
-                                android:textColor="@color/black"
-                                android:textSize="13dp" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
                 </GridLayout>
             </LinearLayout>
             <LinearLayout

@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.337"
-        app:srcCompat="@drawable/around_the_globe_96px" />
+        app:srcCompat="@drawable/travel3" />
 
     <TextView
         android:id="@+id/text"

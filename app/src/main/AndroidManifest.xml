@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tourguide">
 
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -16,7 +15,9 @@
         android:roundIcon="@drawable/travel3"
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuide">
-
+        <activity
+            android:name=".Refund"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

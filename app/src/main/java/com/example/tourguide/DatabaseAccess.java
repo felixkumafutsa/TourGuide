@@ -180,6 +180,7 @@ public class DatabaseAccess {
 
         cv.put("name", String.valueOf(service));
         cv.put("category", String.valueOf(cate));
+        cv.put("service_type", String.valueOf(ty));
         cv.put("provider_name", String.valueOf(provName));
         cv.put("phone", String.valueOf(provPhone));
         cv.put("email", String.valueOf(provEmail));

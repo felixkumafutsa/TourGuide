@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
-    ImageButton accomodation,lakeshore,hospitals,buses, taxi, routes;
+    ImageButton accomodation,lakeshore,hospitals,buses, taxi, routes,map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,9 @@ public class HomeActivity extends AppCompatActivity {
         accomodation = findViewById(R.id.accomodation);
         lakeshore = findViewById(R.id.lakeshore);
        hospitals = findViewById(R.id.hospa);
+       map = findViewById(R.id.mappin);
         buses = findViewById(R.id.publicTransport);
-        taxi = findViewById(R.id.privateTpt);
+        taxi = findViewById(R.id.refund);
         routes = findViewById(R.id.routes);
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -49,6 +50,13 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                 }
                 return false;
+            }
+        });
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ServicesMapping.class);
+                startActivity(intent);
             }
         });
         routes.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +90,7 @@ public class HomeActivity extends AppCompatActivity {
         taxi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),HotelOrders.class);
+                Intent intent = new Intent(getApplicationContext(),Refund.class);
                 startActivity(intent);
             }
         });
