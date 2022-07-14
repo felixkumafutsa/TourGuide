@@ -2,9 +2,11 @@ package com.example.tourguide;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -61,18 +63,36 @@ public class BookHotel extends AppCompatActivity {
                     String dt = etdate.getText().toString();
 
 
-                    if(phone.equals("")||type.equals("")||date.equals(""))
+                    if(phon.equals("")||typ.equals("")||dt.equals("") || numberOfOccupants.equals(""))
                         Toast.makeText(BookHotel.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                     else{
-                        if(!(number_of_occupants.equals(""))){
+                        if(!(numberOfOccupants.equals(""))){
                                Boolean insert = DB.bookHotel(phon, typ, numberOfOccupants, dt);
                                 if(insert==true){
-                                    //Boolean insert1 = DB.addTransaction(service_provider,date);
-                                    Toast.makeText(BookHotel.this, "Booking placed successfully", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(),Payment.class);
-                                    startActivity(intent);
+                                   //Boolean insert1 = DB.addTransaction(service_provider,date);
+                                    //Toast.makeText(BookHotel.this, "Booking placed successfully", Toast.LENGTH_SHORT).show();
+
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(BookHotel.this);
+                                    builder.setTitle("Booking Summary ");
+                                    builder.setMessage("You are have chosen to book a service and below are the details:" +
+                                            "Booking Id: " + "\nService type: "  + type + "\nDate: " +date + "\nTap proceed to make payment or cancel to fill in the details again");
+                                    builder.setPositiveButton("proceed", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            Intent intent = new Intent(getApplicationContext(),Payment.class);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                    });
+                                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                                        }
+                                    });
+                                    builder.create().show();
                                 }else{
-                                    Toast.makeText(BookHotel.this, "Booking failed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(BookHotel.this, "Booking failed, make sure you fill in all the fields", Toast.LENGTH_SHORT).show();
                                 }
                             }
                             else{

@@ -71,8 +71,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
                                 android:text=" Driving and routes"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="13dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.498"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -101,8 +101,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
                                 android:text="Register Service"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="13dp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.498"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -132,8 +132,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
                                 android:text="Login or Register"
-                                android:textSize="16sp"
-                                android:textStyle="bold"></TextView>
+                                android:textColor="@color/black"
+                                android:textSize="13dp"></TextView>
 
                         </androidx.appcompat.widget.LinearLayoutCompat>
 

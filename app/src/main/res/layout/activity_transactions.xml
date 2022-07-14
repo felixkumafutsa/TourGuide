@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Transactions">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+                    <TableRow android:background="#B2DFDB">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@+id/img1"
+                                android:elevation="10dp"
+                                android:text="Transactions "
+                                android:textColor="@color/black"
+                                android:textSize="24dp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/img1"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginRight="20dp"
+                                android:elevation="10dp"
+                                android:src="@drawable/travel3" />
+
+                        </RelativeLayout>
+                    </TableRow>
+                    <TableRow
+                        android:background="@color/teal_700">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="Trans_Id"
+                            android:padding="5sp"
+                            android:textSize="14sp"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="Amount\n(MWK)"
+                            android:padding="5sp"
+                            android:textSize="14sp"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="Date"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"/>
+
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="0001"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="30000"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="16/06/2022"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"/>
+
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="0002"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="34000"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="21/06/2022"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"/>
+
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="0003"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="30000"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="26/06/2022"
+                            android:padding="10sp"
+                            android:textSize="14sp"
+                            android:layout_weight="4"
+                            android:gravity="center_horizontal"/>
+
+                    </TableRow>
+                </TableLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="More ..."
+                    android:textSize="16sp"
+                    android:textStyle="bold"></TextView>
+                <HorizontalScrollView
+                    android:id="@+id/services_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_home"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:layout_editor_absoluteX="0dp">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <androidx.appcompat.widget.AppCompatImageButton
+                                    android:id="@+id/refunds"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/refund_48px"
+                                    android:text="Home"
+                                    android:background="@color/white"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:text=" Refunds"
+                                    android:textColor="@color/black"
+                                    android:textSize="13dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.498"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/icon"></TextView>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <androidx.appcompat.widget.AppCompatImageButton
+                                    android:id="@+id/serviceReg"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/order_history_64px"
+                                    android:text="Profile"
+                                    android:background="@color/white"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:text="Orders"
+                                    android:textColor="@color/black"
+                                    android:textSize="13dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.498"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/icon"></TextView>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <androidx.appcompat.widget.AppCompatImageButton
+                                    android:id="@+id/events"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/accounting_64px"
+                                    android:text="logout"
+                                    android:background="@drawable/button"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:text="Commisions"
+                                    android:textColor="@color/black"
+                                    android:textSize="13dp"></TextView>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </HorizontalScrollView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </ScrollView>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

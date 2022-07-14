@@ -76,6 +76,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -87,7 +88,8 @@
                     android:layout_height="wrap_content"
                     android:text="Account Information"
                     android:textColor="@color/black"
-                    android:textSize="13dp" />
+                    android:textSize="13dp"
+                    android:textStyle="bold"/>
                 <GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -99,7 +101,7 @@
                     android:elevation="12dp">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/profileCard"
+                        android:id="@+id/revenueCard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_rowWeight="1"
@@ -117,19 +119,19 @@
                             android:padding="16dp">
 
                             <ImageButton
-                                android:id="@+id/profile"
+                                android:id="@+id/revenue"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
                                 android:layout_gravity="center"
                                 android:background="@drawable/button"
                                 android:clickable="true"
-                                android:src="@drawable/account_64px" />
+                                android:src="@drawable/money_bag_40px" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="Profile"
+                                android:text="Revenue"
                                 android:textColor="@color/black"
                                 android:textSize="13dp" />
 
@@ -168,7 +170,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="Services"
+                                android:text="Services \n&amp; Olders"
                                 android:textColor="@color/black"
                                 android:textSize="13dp" />
 
@@ -201,13 +203,13 @@
                                 android:layout_gravity="center"
                                 android:background="@drawable/button"
                                 android:clickable="true"
-                                android:src="@drawable/market_square_48px" />
+                                android:src="@drawable/refund_48px" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="Services"
+                                android:text="Refunds"
                                 android:textColor="@color/black"
                                 android:textSize="13dp" />
 
@@ -240,7 +242,7 @@
                                 android:layout_gravity="center"
                                 android:background="@drawable/button"
                                 android:clickable="true"
-                                android:src="@drawable/money_96px" />
+                                android:src="@drawable/accounting_64px" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -254,83 +256,7 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/servicesCard"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        android:background="#91AAB3"
-                        app:cardCornerRadius="12dp"
-                        app:elevation="60dp">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageButton
-                                android:id="@+id/mservices"
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/button"
-                                android:clickable="true"
-                                android:src="@drawable/food_80px" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Policy"
-                                android:textColor="@color/black"
-                                android:textSize="13dp" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/transactionsCard"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        android:background="#91AAB3"
-                        app:cardCornerRadius="12dp"
-                        app:elevation="60dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageButton
-                                android:id="@+id/msgSend"
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:layout_gravity="center"
-                                android:background="@drawable/button"
-                                android:clickable="true"
-                                android:src="@drawable/money_96px" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Transactions"
-                                android:textColor="@color/black"
-                                android:textSize="13dp" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
                 </GridLayout>
             </LinearLayout>
             <LinearLayout
@@ -344,24 +270,38 @@
                     android:layout_height="wrap_content"
                     android:text="Account Settings"
                     android:textColor="@color/black"
+                    android:textStyle="bold"
                     android:textSize="13dp" />
+                <EditText
+                    android:id="@+id/msgSendcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:ems="10"
+                    android:hint="Short Message"
+                    android:inputType="textImeMultiLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerEmail" />
+
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
                     <EditText
-                        android:id="@+id/registerPassword"
+                        android:id="@+id/phone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:ems="10"
-                        android:hint="Short Message"
-                        android:inputType="textPassword"
+                        android:hint="Phone Number"
+                        android:inputType="phone"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/registerEmail" />
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/sendSms"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/button_background_blue"
@@ -373,6 +313,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/registerPhone" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/registerService"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -383,6 +324,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/registerPhone" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/about"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"

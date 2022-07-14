@@ -70,8 +70,8 @@
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
                                         android:text="Hotels and Restraunts"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"></TextView>
+                                        android:textColor="@color/black"
+                                        android:textSize="13dp"></TextView>
 
                                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -99,8 +99,8 @@
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
                                         android:text="Lakeshore Facilities"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textSize="13dp"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintHorizontal_bias="0.498"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -128,8 +128,8 @@
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
                                         android:text="Public Transport"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textSize="13dp"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintHorizontal_bias="0.498"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -193,14 +193,15 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:src="@drawable/location_64px"
-                                        android:text="logout" />
+                                        android:text="logout"
+                                        android:background="@color/white"/>
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
                                         android:text="Driving routes"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"></TextView>
+                                        android:textColor="@color/black"
+                                        android:textSize="13dp"></TextView>
 
                                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -219,14 +220,15 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:src="@drawable/taxi_80px"
-                                        android:text="Home"/>
+                                        android:text="Home"
+                                        android:background="@color/white"/>
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
                                         android:text="Private Transport"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textSize="13dp"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintHorizontal_bias="0.498"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -250,15 +252,16 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:src="@drawable/food_80px"
-                                        android:text="Home" />
+                                        android:text="Home"
+                                        android:background="@color/white"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
                                         android:text="Food and Beverages"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textSize="13dp"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintHorizontal_bias="0.498"
                                         app:layout_constraintStart_toStartOf="parent"
@@ -321,14 +324,15 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:src="@drawable/refund_48px"
-                                        android:text="logout" />
+                                        android:text="logout"
+                                        android:background="@color/white"/>
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
                                         android:text="Request refund"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"></TextView>
+                                        android:textColor="@color/black"
+                                        android:textSize="13dp"></TextView>
 
                                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -349,15 +353,16 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:src="@drawable/google_maps_48px"
-                                        android:text="Home" />
+                                        android:text="Home"
+                                        android:background="@color/white"/>
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_margin="5dp"
                                         android:text="Mapping"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textSize="13dp"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintHorizontal_bias="0.498"
                                         app:layout_constraintStart_toStartOf="parent"
