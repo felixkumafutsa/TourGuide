@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -174,22 +175,52 @@ public class DatabaseAccess {
         }
     }
 
-    public Boolean addService(String service, String cate, String ty, String provName, String provPhone, String provEmail, String locat) {
+    public Boolean addService(String service, String cate, String ty, String provName, String provPhone, String provEmail, byte[] image, String locat) {
         SQLiteDatabase db = openHelper.getWritableDatabase();
-        ContentValues cv = new ContentValues();
+        String sql = "INSERT INTO services VALUES (NULL, ?, ?, ? , ?, ?, ?, ?, ?)";
 
-        cv.put("name", String.valueOf(service));
-        cv.put("category", String.valueOf(cate));
-        cv.put("service_type", String.valueOf(ty));
-        cv.put("provider_name", String.valueOf(provName));
-        cv.put("phone", String.valueOf(provPhone));
-        cv.put("email", String.valueOf(provEmail));
-        cv.put("location", String.valueOf(locat));
-        long result = db.insert("services", null, cv);
+        SQLiteStatement statement = db.compileStatement(sql);
+        statement.clearBindings();
+
+        statement.bindString(1, service);
+        statement.bindString(2, cate);
+        statement.bindString(3, ty);
+        statement.bindString(4, provName);
+        statement.bindString(5, provPhone);
+        statement.bindString(6, provEmail);
+        statement.bindBlob(7, image);
+        statement.bindString(8, locat);
+        long result = statement.executeInsert();;
         if (result == -1) {
             return false;
         } else {
             return true;
         }
+    }/*
+    public void updateData(String name, String price, byte[] image, int id) {
+        SQLiteDatabase database = openHelper.getWritableDatabase();
+
+        String sql = "UPDATE FOOD SET name = ?, price = ?, image = ? WHERE id = ?";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+        statement.bindString(1, name);
+        statement.bindString(2, price);
+        statement.bindBlob(3, image);
+        statement.bindDouble(4, (double)id);
+
+        statement.execute();
+        database.close();
     }
+
+    public  void deleteData(int id) {
+        SQLiteDatabase database = openHelper.getWritableDatabase();
+
+        String sql = "DELETE FROM FOOD WHERE id = ?";
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+        statement.bindDouble(1, (double)id);
+
+        statement.execute();
+        database.close();
+    }*/
 }

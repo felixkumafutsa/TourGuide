@@ -22,6 +22,8 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.tourguide.About;
+import com.example.tourguide.AddService;
 import com.example.tourguide.Commisions;
 import com.example.tourguide.HomeActivity;
 import com.example.tourguide.HotelOrders;
@@ -100,6 +102,18 @@ public class SlideshowFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), Commisions.class));
+            }
+        });
+        addService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), AddService.class));
+            }
+        });
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), About.class));
             }
         });
     }

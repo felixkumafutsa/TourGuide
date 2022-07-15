@@ -58,7 +58,9 @@ public class PopularHotels extends AppCompatActivity {
 
         serviceAdapter = new ServiceAdapter(PopularHotels.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
         recyclerView.setAdapter(serviceAdapter);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(PopularHotels.this));
+       serviceAdapter.notifyDataSetChanged();
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

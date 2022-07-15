@@ -22,7 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class Services extends AppCompatActivity {
-    ImageButton transportServices, lakeShoreFacilities, events;
+    ImageButton transportServices, lakeShoreFacilities, events,serviceReg ;
     RecyclerView recyclerView;
     DatabaseAccess myDB;
     ArrayList<String> service_id, name, category, service_type, provider_name, phone, email, location;
@@ -36,7 +36,7 @@ public class Services extends AppCompatActivity {
         Toolbar mtoobar = findViewById(R.id.main_toolbar);
         setSupportActionBar(mtoobar);
         transportServices = findViewById(R.id.transportServices);
-        lakeShoreFacilities = findViewById(R.id.serviceReg);
+        serviceReg = findViewById(R.id.serviceReg);
         events = findViewById(R.id.events);
         recyclerView = findViewById(R.id.serviceRecycler);
         myDB = new DatabaseAccess(Services.this);
@@ -55,17 +55,19 @@ public class Services extends AppCompatActivity {
         recyclerView.setAdapter(serviceAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Services.this));
 
+        serviceAdapter.notifyDataSetChanged();
+        serviceReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),AddService.class);
+                startActivity(intent);
+            }
+        });
+
         transportServices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Maps.class);
-                startActivity(intent);
-            }
-        });
-        lakeShoreFacilities.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ServicesMapping.class);
                 startActivity(intent);
             }
         });

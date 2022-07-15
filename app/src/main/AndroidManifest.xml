@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuide">
         <activity
+            android:name=".About"
+            android:exported="false" />
+        <activity
             android:name=".Refunds"
             android:exported="false" />
         <activity
