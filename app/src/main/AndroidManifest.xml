@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuide">
         <activity
+            android:name=".Transports"
+            android:exported="false" />
+        <activity
             android:name=".About"
             android:exported="false" />
         <activity

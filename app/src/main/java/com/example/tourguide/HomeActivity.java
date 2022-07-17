@@ -80,10 +80,10 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        buses.setOnClickListener(new View.OnClickListener() {
+        lakeshore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Services.class);
+                Intent intent = new Intent(getApplicationContext(),PopularHotels.class);
                 startActivity(intent);
             }
         });

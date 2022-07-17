@@ -49,8 +49,30 @@ public class DatabaseAccess {
         return stringBuffer.toString();
     }
 
-    public Cursor readAllHotelServices() {
+    public Cursor readAllServices() {
         String query = "SELECT * FROM services";
+        SQLiteDatabase db = openHelper.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    public Cursor readAllHotelServices() {
+        String query = "SELECT * FROM services WHERE category LIKE '%accomodation%'";
+        SQLiteDatabase db = openHelper.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null) {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    public Cursor readAllTransportServices() {
+        String query = "SELECT * FROM services WHERE category LIKE '%transport%'";
         SQLiteDatabase db = openHelper.getReadableDatabase();
 
         Cursor cursor = null;

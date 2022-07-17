@@ -21,12 +21,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class Services extends AppCompatActivity {
+public class Transports extends AppCompatActivity {
     ImageButton transportServices, lakeShoreFacilities, events,serviceReg ;
     RecyclerView recyclerView;
     DatabaseAccess myDB;
     ArrayList<String> service_id, name, category, service_type, provider_name, phone, email, location;
-    ServiceAdapter serviceAdapter;
+    TransportsAdapter transportsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +38,8 @@ public class Services extends AppCompatActivity {
         transportServices = findViewById(R.id.transportServices);
         serviceReg = findViewById(R.id.serviceReg);
         events = findViewById(R.id.events);
-        recyclerView = findViewById(R.id.serviceRecycler);
-        myDB = new DatabaseAccess(Services.this);
+        recyclerView = findViewById(R.id.trRecycler);
+        myDB = new DatabaseAccess(Transports.this);
         service_id = new ArrayList<>();
         name = new ArrayList<>();
         category = new ArrayList<>();
@@ -51,11 +51,11 @@ public class Services extends AppCompatActivity {
 
         storeDataInArrays();
 
-        serviceAdapter = new ServiceAdapter(Services.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
-        recyclerView.setAdapter(serviceAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(Services.this));
+        transportsAdapter = new TransportsAdapter(Transports.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
+        recyclerView.setAdapter(transportsAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Transports.this));
 
-        serviceAdapter.notifyDataSetChanged();
+        transportsAdapter.notifyDataSetChanged();
         serviceReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +76,7 @@ public class Services extends AppCompatActivity {
         }
     }
     private void storeDataInArrays() {
-        Cursor cursor = myDB.readAllServices();
+        Cursor cursor = myDB.readAllTransportServices();
         if(cursor.getCount() == 0){
 
         }else{
