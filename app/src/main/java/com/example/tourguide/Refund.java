@@ -39,52 +39,25 @@ public class Refund extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                    if ((Refund.this.checkSelfPermission(Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED)){
+                        String phoneNumber = phone.getText().toString().trim();
+                        String SMS = message.getText().toString().trim();
 
-                ActivityCompat.requestPermissions(
-                        Refund.this,
-                        new String[]{Manifest.permission.SEND_SMS},
-                        REQUEST_CODE_SMS);
+                        try {
+                            SmsManager smsManager = SmsManager.getDefault();
+                            smsManager.sendTextMessage(phoneNumber,null,SMS,null,null);
+                            Toast.makeText(Refund.this,"Message Sent",Toast.LENGTH_SHORT).show();
+                        }catch (Exception e){
+                            e.printStackTrace();
+                            Toast.makeText(Refund.this,"Failed to send text",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                }
             }
         });
 
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        if(requestCode == REQUEST_CODE_SMS){
-            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                startActivity(intent);
-            }
-            else {
-                Toast.makeText(getApplicationContext(), "You don't have permission to send message!", Toast.LENGTH_SHORT).show();
-            }
-            return;
-        }
-
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if(requestCode == REQUEST_CODE_SMS && resultCode == RESULT_OK && data != null){
-            String phoneNumber = phone.getText().toString().trim();
-            String transactionId = transId.getText().toString().trim();
-            String msg = message.getText().toString().trim();
-            String SMS = "\n"+phoneNumber + "\n"+transactionId + "\n"+ msg;
-
-
-            try {
-                SmsManager smsManager = SmsManager.getDefault();
-                smsManager.sendTextMessage(phoneNumber,null,SMS,null,null);
-                Toast.makeText(Refund.this,"Message Sent",Toast.LENGTH_SHORT).show();
-            }catch (Exception e){
-                e.printStackTrace();
-                Toast.makeText(Refund.this,"Failed to send text",Toast.LENGTH_SHORT).show();
-            }
-
-         }
-
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 }

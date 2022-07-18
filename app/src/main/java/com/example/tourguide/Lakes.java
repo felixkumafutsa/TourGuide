@@ -21,25 +21,25 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class Transports extends AppCompatActivity {
+public class Lakes extends AppCompatActivity {
     ImageButton transportServices, lakeShoreFacilities, events,serviceReg ;
     RecyclerView recyclerView;
     DatabaseAccess myDB;
     ArrayList<String> service_id, name, category, service_type, provider_name, phone, email, location;
-    TransportsAdapter transportsAdapter;
+    LakesAdapter lakesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transports);
+        setContentView(R.layout.activity_lakes);
 
         Toolbar mtoobar = findViewById(R.id.main_toolbar);
         setSupportActionBar(mtoobar);
         transportServices = findViewById(R.id.transportServices);
         serviceReg = findViewById(R.id.serviceReg);
         events = findViewById(R.id.events);
-        recyclerView = findViewById(R.id.trRecycler);
-        myDB = new DatabaseAccess(Transports.this);
+        recyclerView = findViewById(R.id.lakesRecycler);
+        myDB = new DatabaseAccess(Lakes.this);
         service_id = new ArrayList<>();
         name = new ArrayList<>();
         category = new ArrayList<>();
@@ -51,11 +51,11 @@ public class Transports extends AppCompatActivity {
 
         storeDataInArrays();
 
-        transportsAdapter = new TransportsAdapter(Transports.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
-        recyclerView.setAdapter(transportsAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(Transports.this));
+        lakesAdapter = new LakesAdapter(Lakes.this,this, service_id, name, category, service_type, provider_name, phone, email, location);
+        recyclerView.setAdapter(lakesAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Lakes.this));
 
-        transportsAdapter.notifyDataSetChanged();
+        lakesAdapter.notifyDataSetChanged();
         serviceReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +76,7 @@ public class Transports extends AppCompatActivity {
         }
     }
     private void storeDataInArrays() {
-        Cursor cursor = myDB.readAllTransportServices();
+        Cursor cursor = myDB.readAllLakeServices();
         if(cursor.getCount() == 0){
 
         }else{

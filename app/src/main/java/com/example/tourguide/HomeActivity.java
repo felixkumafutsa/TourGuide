@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
-    ImageButton accomodation,lakeshore,hospitals,buses, taxi, routes,map;
+    ImageButton accomodation,lakeshore,hospitals,buses, taxi, routes,map,food;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomBar);
         //BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         accomodation = findViewById(R.id.accomodation);
+        food= findViewById(R.id.food_offer);
         lakeshore = findViewById(R.id.lakeshore);
        hospitals = findViewById(R.id.hospa);
        map = findViewById(R.id.mappin);
@@ -59,6 +60,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Food.class);
+                startActivity(intent);
+            }
+        });
         routes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,14 +84,14 @@ public class HomeActivity extends AppCompatActivity {
         hospitals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Services.class);
+                Intent intent = new Intent(getApplicationContext(),Transports.class);
                 startActivity(intent);
             }
         });
         lakeshore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),PopularHotels.class);
+                Intent intent = new Intent(getApplicationContext(),Lakes.class);
                 startActivity(intent);
             }
         });
@@ -91,6 +99,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),Refund.class);
+                startActivity(intent);
+            }
+        });
+       buses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Transports.class);
                 startActivity(intent);
             }
         });

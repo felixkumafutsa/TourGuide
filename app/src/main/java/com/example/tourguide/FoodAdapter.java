@@ -16,12 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class TransportsAdapter extends RecyclerView.Adapter<TransportsAdapter.MyViewHolder>{
+public class FoodAdapter extends RecyclerView.Adapter< FoodAdapter.MyViewHolder>{
     private Context context;
     private Activity activity;
     private ArrayList service_id, name, category, service_type, provider_name, phone, email, location;
-    public TransportsAdapter(Context context, Activity activity, ArrayList service_id, ArrayList name, ArrayList category,
-                          ArrayList service_type, ArrayList provider_name, ArrayList phone, ArrayList email, ArrayList location) {
+    public  FoodAdapter(Context context, Activity activity, ArrayList service_id, ArrayList name, ArrayList category,
+                             ArrayList service_type, ArrayList provider_name, ArrayList phone, ArrayList email, ArrayList location) {
         this.context = context;
         this.activity = activity;
         this.service_id = service_id;
@@ -36,9 +36,9 @@ public class TransportsAdapter extends RecyclerView.Adapter<TransportsAdapter.My
 
     @NonNull
     @Override
-    public TransportsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public  FoodAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.tpt, parent, false);
+        View view = inflater.inflate(R.layout.food, parent, false);
         return new MyViewHolder(view);
 
     }
@@ -91,7 +91,7 @@ public class TransportsAdapter extends RecyclerView.Adapter<TransportsAdapter.My
             phone_txt = itemView.findViewById(R.id.phone);
             email_txt = itemView.findViewById(R.id.email);
             location_txt = itemView.findViewById(R.id.location);
-            mainLayout = itemView.findViewById(R.id.tptLayout);
+            mainLayout = itemView.findViewById(R.id.foodLayout);
             //Animate Recyclerview
             //Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
             //mainLayout.setAnimation(translate_anim);

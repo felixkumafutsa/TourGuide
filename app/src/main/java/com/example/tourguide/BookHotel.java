@@ -75,7 +75,7 @@ public class BookHotel extends AppCompatActivity {
                                     AlertDialog.Builder builder = new AlertDialog.Builder(BookHotel.this);
                                     builder.setTitle("Booking Summary ");
                                     builder.setMessage("You are have chosen to book a service and below are the details:" +
-                                            "Booking Id: " + "\nService type: "  + type + "\nDate: " +date + "\nTap proceed to make payment or cancel to fill in the details again");
+                                            "Booking Id: " + "\nService type: "  + type + "\nDate: " +date + "\nTap proceed to make payment or cancel to fill in the details again" +  "\nRemember to keep a screenshot of this page");
                                     builder.setPositiveButton("proceed", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialogInterface, int i) {

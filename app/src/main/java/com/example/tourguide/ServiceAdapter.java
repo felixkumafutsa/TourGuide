@@ -38,7 +38,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
     @Override
     public ServiceAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.service_layout, parent, false);
+        View view = inflater.inflate(R.layout.accomodation, parent, false);
         return new MyViewHolder(view);
 
     }
@@ -91,7 +91,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.MyViewHo
             phone_txt = itemView.findViewById(R.id.phone);
             email_txt = itemView.findViewById(R.id.email);
             location_txt = itemView.findViewById(R.id.location);
-            mainLayout = itemView.findViewById(R.id.serviceLayout);
+            mainLayout = itemView.findViewById(R.id.accomodationLayout);
             //Animate Recyclerview
             //Animation translate_anim = AnimationUtils.loadAnimation(context, R.anim.translate_anim);
             //mainLayout.setAnimation(translate_anim);
