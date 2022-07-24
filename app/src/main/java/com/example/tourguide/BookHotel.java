@@ -79,7 +79,7 @@ public class BookHotel extends AppCompatActivity {
                                     builder.setPositiveButton("proceed", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialogInterface, int i) {
-                                            Intent intent = new Intent(getApplicationContext(),Payment.class);
+                                            Intent intent = new Intent(getApplicationContext(),Pay.class);
                                             startActivity(intent);
                                             finish();
                                         }
