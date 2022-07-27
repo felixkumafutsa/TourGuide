@@ -37,7 +37,7 @@ public class ReceiveSMS extends BroadcastReceiver {
 
                         // if (from_number.toLowerCase().equals("airtelmoney") && (msgBody.contains("991512441"))) {
 
-                        if (from_number.equals("+265991512441")){
+                        if (from_number.equals("+265980143067")){
                             String[] msg_arr = msgBody.split(" ");
                             String amount = msg_arr[13].replace(".00.", "").replace("MK", "");
                             String transID = msg_arr[2].replace(",", "").replace(".", "");
